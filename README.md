@@ -1,13 +1,12 @@
-## fonsecaA-Week5_CST100_Java_Exercises_Aaron_Fonseca
+#fonsecaA-Week5_CST100_Java_Exercises_Aaron_Fonseca
 
-#Objective:
+##Objective:
 Write programs that will make use of graphics to organize and display data.
 
-Assignment Description: 
+##Assignment Description: 
 The programming exercises require that students define and implement graphics class, methods, parameters, dot operator, sequencing, and color class. Students will implement solutions by drawing graphics, make pictures, and create graphical user interfaces.
 
-Activity Directions:
-
+##Activity Directions:
 Complete the following exercises from the textbook:
 
 Chapter 14, Exercises: 14.12, 14.14, 14.17, 14.19
