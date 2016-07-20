@@ -17,24 +17,26 @@ public class Exercise_11_03 {
 	public static void main(String[] args) {
 		
 		// Create a new StopWatch Object
-		Account testAccount = new Account(1122, 20000);
+		Account NormalAccount = new Account(1122, 2000);
+		CheckingAccount CheckingAccount = new CheckingAccount(1010, 2000);
+		SavingsAccount SavingsAccount = new SavingsAccount(1156, 2000);
 		
-		testAccount.setAnnualInterestRate(4.5);
-		
-		testAccount.withdraw(2500);
-		
-		testAccount.deposit(3000);
+		NormalAccount.setAnnualInterestRate(4.5);
+		NormalAccount.withdraw(2500);
+		NormalAccount.deposit(3000);
 			
-		// Get Balance
-		double dollars = testAccount.getBalance();
-		double monthlyInterest = testAccount.getMonthlyInterest();
+		System.out.println(NormalAccount.toString() +"\n" );
 		
-		// Conver Balance to US Dollar Sting
-		String usDollars = java.text.NumberFormat.getCurrencyInstance().format(dollars);
-		String usDollarsInterenst = java.text.NumberFormat.getCurrencyInstance().format(monthlyInterest);
+		CheckingAccount.setAnnualInterestRate(4.5);
+		CheckingAccount.withdraw(2500);
+		CheckingAccount.deposit(3000);
 		
-		System.out.printf("The balance is " + usDollars + "\n");
-		System.out.printf("The monthly interest " + usDollarsInterenst + "\n");	
-		System.out.printf("The date the account was created is " + testAccount.getDateCreated());		
+		System.out.println(CheckingAccount.toString() +"\n" );	
+		
+		SavingsAccount.setAnnualInterestRate(4.5);
+		SavingsAccount.withdraw(2500);
+		SavingsAccount.deposit(1000);
+		
+		System.out.println(SavingsAccount.toString() +"\n" );	
 	}
 }

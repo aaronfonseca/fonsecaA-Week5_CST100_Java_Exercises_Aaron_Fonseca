@@ -50,8 +50,12 @@ public class CheckingAccount extends Account{
 	}
 	
 	// Return a String description of CheckingAccount class
+	@Override
 	public String toString() {
-		return super.toString() + "\nOverdraft limit: $" + String.format("%.2f", overDraftLimit);
+		return "Checking Account id: " + id + 
+				"\n\t" + "Interest rate: " + annualInterestRate + 
+				"\n\t" + "Balance: $" + String.format("%.2f", balance) +
+				"\n\t" + "Overdraft limit: $" + String.format("%.2f", overDraftLimit);
 	}
 
 }

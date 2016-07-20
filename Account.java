@@ -23,9 +23,9 @@
 import java.util.Date;
 
 public class Account {
-	private int id;
-	private double balance;
-	private double annualInterestRate;
+	protected int id;
+	protected double balance;
+	protected double annualInterestRate;
 	private Date dateCreated;
 	
 	// Create Default Account
@@ -97,5 +97,12 @@ public class Account {
 	public void deposit(double amount) {
 		balance += amount;
 	}
+	
+	@Override
+    public String toString() {
+        return "Account id: " + id + 
+        		"\n\t" + "Interest rate: " + annualInterestRate + 
+        		"\n\t" + "Balance: $" + String.format("%.2f", balance);
+    }
 	
 }
