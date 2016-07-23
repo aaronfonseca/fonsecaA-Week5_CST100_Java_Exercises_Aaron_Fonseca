@@ -20,13 +20,16 @@
 * +deposit(amount: double)                              *
 ********************************************************/
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Account {
+	private String name = "unknown";
 	protected int id;
 	protected double balance;
 	protected double annualInterestRate;
 	private Date dateCreated;
+	private ArrayList<Transaction> transactions;
 	
 	// Create Default Account
 	Account() {
@@ -34,6 +37,7 @@ public class Account {
 		balance = 0;
 		annualInterestRate = 0;
 		dateCreated = new Date(); 
+		transactions = new ArrayList<Transaction>();
 	}
 	
 	//Creates an account with newId and newBalance
@@ -41,7 +45,17 @@ public class Account {
 		id = newId;
 		balance = newBalance;
 		dateCreated = new Date();
+		transactions = new ArrayList<Transaction>();
 	}
+	
+	//Creates an account with newId, newBalance and newName
+	Account(int newId, double newBalance, String newName) {
+			id = newId;
+			balance = newBalance;
+			dateCreated = new Date();
+			name = newName;
+			transactions = new ArrayList<Transaction>();
+		}
 	
 	// Set id
 	public void setId(int newId) {
@@ -91,11 +105,13 @@ public class Account {
 	// Withdraw
 	public void withdraw(double amount) {
 		balance -= amount;
+		transactions.add(new Transaction('W', amount, balance, "Withdrawal from account"));
 	}
 
 	// Deposit
 	public void deposit(double amount) {
 		balance += amount;
+		transactions.add(new Transaction('D', amount, balance, "Deposit to account"));
 	}
 	
 	@Override
@@ -104,5 +120,18 @@ public class Account {
         		"\n\t" + "Interest rate: " + annualInterestRate + 
         		"\n\t" + "Balance: $" + String.format("%.2f", balance);
     }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	// Return transactions
+	public ArrayList<Transaction> getTransactions() {
+		return transactions;
+	}
 	
 }
