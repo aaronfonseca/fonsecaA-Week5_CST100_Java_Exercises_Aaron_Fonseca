@@ -49,11 +49,11 @@ public class Exercise_11_17 {
         }
 
         // Remove doubles and get odd sequence variables
-        ArrayList<Integer> oddSequencevariables = removeDoubles(occurrences);
+        ArrayList<Integer> oddVariables = removeDoubles(occurrences);
 
         // Get smallest variable
         int smallestVariable = 1;
-        for (int i : oddSequencevariables) {
+        for (int i : oddVariables) {
             smallestVariable *= i;
         }
         return smallestVariable;
